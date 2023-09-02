@@ -18,8 +18,8 @@ public class CommentBo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "COMMENT_ID")
 	private Long commentId;
-	@Column(name = "USERNAME")
-	private String useName;
+//	@Column(name = "USERNAME")
+//	private String useName;
 	@Column(name = "COMMENT_CONTENT")
 	private String commentContent;
 	@Column(name = "COMMENT_DATE")
@@ -32,12 +32,12 @@ public class CommentBo {
 	public void setCommentId(Long commentId) {
 		this.commentId = commentId;
 	}
-	public String getUseName() {
-		return useName;
-	}
-	public void setUseName(String useName) {
-		this.useName = useName;
-	}
+//	public String getUseName() {
+//		return useName;
+//	}
+//	public void setUseName(String useName) {
+//		this.useName = useName;
+//	}
 	public String getCommentContent() {
 		return commentContent;
 	}
