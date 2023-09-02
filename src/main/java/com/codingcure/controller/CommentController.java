@@ -29,6 +29,17 @@ public class CommentController {
 	private CommentService commentService;
 	
 	
+//	@PostMapping("/saveComment")
+//	public ResponseEntity<String> saveComment(@RequestBody CommentBo  bo)
+//	{
+//		CommentBo commentBo = commentService.saveComment(bo);
+//		if(commentBo !=null)
+//			return new ResponseEntity<String>(ConstantsValue.SUCCESS_MESSAGE, HttpStatusCode.valueOf(ConstantsValue.SUCCESS_CREATED));
+//		else
+//			return new ResponseEntity<String>(ConstantsValue.ERROR_MESSAGE, HttpStatusCode.valueOf(ConstantsValue.ERROE_CODE));
+//	}
+	
+	//Sonu's changes code. Here i hv remove userName
 	@PostMapping("/saveComment")
 	public ResponseEntity<String> saveComment(@RequestBody CommentBo  bo)
 	{
@@ -44,8 +55,10 @@ public class CommentController {
 	{
 		System.out.println(commentType);
 		List<CommentBo> commentList=commentService.getComments(commentType);
+		ResponseEntity<List<CommentBo>> responseEntity = new ResponseEntity<List<CommentBo>>(commentList, HttpStatusCode.valueOf(ConstantsValue.SUCCESS_CODE));
+		System.out.println(responseEntity);
 		
-			return new ResponseEntity<List<CommentBo>>(commentList, HttpStatusCode.valueOf(ConstantsValue.SUCCESS_CODE)); 
+			return responseEntity;
 	}
 	
 	
